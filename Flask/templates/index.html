@@ -6,9 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{url_for('home')}}", method="POST">
-        Enter Review : <input type="text", name="review">
+    <form action="{{url_for('predict')}}", method="POST">
+        Enter Review : <input type="textbox", name="review">
         <input type="submit", value="predict">
     </form>
+    <br>
+    <br>
+    {{prediction_text}}
 </body>
 </html>
