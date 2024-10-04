@@ -1,29 +1,36 @@
 import {useEffect, useState} from 'react';
+import axios from 'axios';
 
 function App() {
-  const [data, setData] = useState({})
-  useEffect(()=>{
-    fetchData();
-  }, []);
+  const [text, setText] = useState('');
 
-  const fetchData = async ()=>{
-    try{
-      const response = await fetch('http://127.0.0.1:5000/data');
-      const jsonData = await response.json();
-      setData(jsonData);
-    }
-    catch(error){
-      console.error(error);
-    }
+  const [data, setData] = useState({});
+
+  const formdata = new FormData();
+  formdata.append('review', text);
+
+  const postData = async (e) => {
+    e.preventDefault();
+    axios.post('http://127.0.0.1:5000/predict', formdata).then((response)=>{
+      console.log('Data has been sent');
+      setData(response.data);
+    }).catch(()=>{
+      console.log('Error sending data');
+    })
   }
 
   return (
-    <div className="App">
-      <h1>Front end</h1>
-      <h3>Review : {data.Review}</h3>
-      <br></br>
-      <h3>Prediction : {data.prediction}</h3>
-    </div>
+    <form onSubmit={postData}>
+      <label>
+      Enter Review:  
+      </label>
+      <input type='text' value={text} onChange={(e)=>{
+        setText(e.target.value);
+      }}></input>
+      <button type='submit'>Submit</button>
+      <br/>
+      <label>Prediction: </label> {data.prediction}
+    </form>
   );
 }
 
