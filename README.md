@@ -12,9 +12,8 @@ front end:
   - review page
     - heading of review
     - review of the product
-    - rating
     - submit review button
-    - display sentiment and probability of sentiment
+    - display sentiment 
 
 Folder Structure :
   - AI-ML
