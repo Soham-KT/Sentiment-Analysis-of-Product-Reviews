@@ -1,0 +1,102 @@
+/* LoginSignUp.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #181C14; /* Dark background color */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #3C3D37; /* Dark grey background for container */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+    color: #ECDFCC; /* Light cream text color */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.underline {
+    width: 50px;
+    height: 3px;
+    background-color: #697565; /* Olive green underline */
+    margin: 10px auto 0;
+}
+
+.inputs {
+    margin: 20px 0;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    background-color: #697565; /* Olive green input background */
+    color: #ECDFCC;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.input input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    color: #ECDFCC; /* Light cream text color */
+    font-size: 16px;
+    padding: 5px;
+    outline: none;
+}
+
+.input svg {
+    color: #ECDFCC; /* Light cream color for icons */
+    margin-right: 10px;
+}
+::placeholder {
+    color: #4c453b;
+    opacity: 1; /* Firefox */
+  }
+.forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password span {
+    color: #ECDFCC;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.forgot-password span:hover {
+    text-decoration: underline;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit {
+    background-color: #ECDFCC; /* Light cream color for buttons */
+    color: #181C14; /* Dark text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    
+}
+
+.submit:hover {
+    background-color: #697565; /* Dark olive green on hover */
+    color: #ECDFCC; /* Text stays light on hover */
+}
