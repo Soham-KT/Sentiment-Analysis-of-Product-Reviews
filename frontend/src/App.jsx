@@ -2,6 +2,7 @@ import { useState } from 'react'
 import LoginSignUp from './Components/LoginSignUp/LoginSignUp'
 
 
+
 // import './App.css'
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
 
   return (
     <div>
-       <LoginSignUp/> 
+      <LoginSignUp /> 
     </div>
   )
 }
