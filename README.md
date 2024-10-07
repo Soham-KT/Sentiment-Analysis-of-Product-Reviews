@@ -20,3 +20,9 @@ Folder Structure :
     - csv-modification.ipynb -> contains code to modify the csv file
     - model-maker.ipynb -> contains code to make the model
     - testing.py -> contains code to test snippets of code using dummy data
+  - Flask
+    - templates
+      - index.html -> basic template to check flask functionality
+    - app.py -> contains the backend of the project which receives the data through api call and gives the prediction
+    - data_loader.py -> loads the model and file (tokenizer) for the prediction task
+    - data_predict.py -> predicts if the review is positive or negative
