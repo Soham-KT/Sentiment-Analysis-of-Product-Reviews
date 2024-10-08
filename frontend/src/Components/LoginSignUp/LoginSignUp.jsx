@@ -10,28 +10,34 @@ import { FaEyeSlash } from "react-icons/fa6";
 
 const LoginSignUp = () => {
     const [visible, setVisible] = useState(false)
+    const [action, setAction] = useState("Login")
 
     return (
         <div className="container">
             <div className="header">
-                <div className="text">Sign Up</div>
+                <div className="text">{action}</div>
                 <div className="underline"></div>
             </div>
 
             <div className="inputs">
-                <div className="input">
-                    <FaRegUser />
-                    <input type="text" placeholder="Enter your Name" />
-                </div>
+                {action === "Login" ?
+                    <div></div>
+                    :
+                    <div className="input">
+                        <FaRegUser />
+                        <input type="text" placeholder="Enter your Name" />
+                    </div>
+                }
+
                 <div className="input">
                     <HiOutlineMail />
                     <input type="email"
-                    placeholder="Enter your Email" />
+                        placeholder="Enter your Email" />
                 </div>
                 <div className="input">
                     <FaLock />
                     <input placeholder="Enter your Passsword"
-                    type={visible ? "text" : "password"} />
+                        type={visible ? "text" : "password"} />
                     {visible ? (
                         <span
                             onClick={() => setVisible(false)}
@@ -50,10 +56,16 @@ const LoginSignUp = () => {
 
                 </div>
             </div>
-            <div className="forgot-password"><span>Forgot password?</span></div>
+            {action === "Sign Up" ?
+             <div> </div>
+              : 
+             <div className="forgot-password"><span>Forgot password?</span></div>
+             }
             <div className="submit-container">
-                <div className="submit">Sign Up</div>
-                <div className="submit">Login </div>
+                <div className={action === "Login" ? "submit-grey" : "submit"}
+                    onClick={() => { setAction("Sign Up") }}>Sign Up</div>
+                <div className={action === "Sign Up" ? "submit-grey" : "submit"}
+                    onClick={() => { setAction("Login") }}>Login </div>
             </div>
         </div>
     );
