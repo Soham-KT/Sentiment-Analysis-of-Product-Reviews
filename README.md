@@ -16,7 +16,6 @@ front end:
     - display sentiment 
 
 Folder Structure :
-
 	- Data
 		- insert kaggle link here
   - AI-ML
