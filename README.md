@@ -16,6 +16,8 @@ front end:
     - display sentiment 
 
 Folder Structure :
+	- Data
+		- insert kaggle link here
   - AI-ML
     - csv-modification.ipynb -> contains code to modify the csv file
     - model-maker.ipynb -> contains code to make the model
