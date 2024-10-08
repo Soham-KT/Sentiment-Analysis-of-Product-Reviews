@@ -81,8 +81,10 @@ body {
 }
 
 .submit-container {
-    display: flex;
     justify-content: space-between;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 
 .submit {
@@ -92,11 +94,27 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
+    margin: 5px 27px;
+
     
 }
 
 .submit:hover {
     background-color: #697565; /* Dark olive green on hover */
     color: #ECDFCC; /* Text stays light on hover */
+}
+
+.submit-grey
+{
+    background-color: #7c7b79; /* Light cream color for buttons */
+    color: #181C14; /* Dark text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin: 5px 27px;
+
+  
 }
