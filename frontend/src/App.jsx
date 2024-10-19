@@ -1,17 +1,14 @@
-import { useState } from 'react'
-import LoginSignUp from './Components/LoginSignUp/LoginSignUp'
+import React from 'react'
+import LoginSignUp from './Components/LoginSignUp/LoginSignUp';
+import NavBar from './Components/NavBar/NavBar';
 
-
-
-// import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div>
-      <LoginSignUp /> 
-    </div>
+    <>
+      <NavBar />
+      {/* <LoginSignUp /> */}
+
+    </>
   )
 }
 

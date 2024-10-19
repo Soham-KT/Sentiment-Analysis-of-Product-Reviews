@@ -1,0 +1,135 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "urbanist";
+}
+
+p,
+li,
+a,
+button {
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #ECDFCC; /* Pastel peach for links */
+
+  &:hover {
+    color: #697565; /* Teal green for hover */
+    text-decoration: underline;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  height: 10rem;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  background-color: #181C14; /* Dark green for the header background */
+  width: 100%;
+}
+
+.container {
+  max-width: 132rem;
+  margin: auto;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.navbar-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3.2rem;
+}
+logo h1 {
+  justify-content: flex-start;
+  
+}
+
+nav ul li a {
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #3C3D37; /* Grayish green for hover background */
+  color: #ECDFCC; /* Ensure text remains visible on hover */
+}
+
+.ham-menu {
+  display: none;
+  color: #ECDFCC; /* Button color to match links */
+}
+
+/* media queries */
+@media screen and (max-width: 998px) {
+  .menu-web {
+    display: none;
+  }
+
+  .ham-menu {
+    display: inline-block;
+    text-align: end;
+    color: #ECDFCC; /* Pastel peach for hamburger menu icon */
+  }
+
+  .menu-mobile {
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    background-color: #181C14; /* Dark green for mobile menu background */
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu-mobile ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-mobile ul li a {
+    color: #ECDFCC; /* Pastel peach for mobile links */
+    padding: 1rem 1.5rem;
+  }
+
+  .menu-mobile ul li a:hover {
+    background-color: #3C3D37; /* Grayish green hover effect for mobile links */
+  }
+
+  .menu-mobile ul li:first-child {
+    margin-top: 1.2rem;
+  }
+
+  .menu-mobile ul li:last-child {
+    margin-bottom: 1.2rem;
+  }
+}
