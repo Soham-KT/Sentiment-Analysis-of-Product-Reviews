@@ -1,4 +1,20 @@
-#root {
+/* src/styles/App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f0;
+  margin: 0;
+  color: #2f4f2f;
+}
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +55,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */
