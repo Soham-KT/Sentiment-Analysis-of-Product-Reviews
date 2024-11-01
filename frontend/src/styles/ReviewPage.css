@@ -1,0 +1,72 @@
+/* src/styles/ReviewPage.css */
+
+.review-container {
+    background-color: #f5f5dc;
+    padding: 30px;
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 128, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .review-container:hover {
+    transform: scale(1.02);
+  }
+  
+  .review-container h2 {
+    color: #2f4f2f;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .review-container input,
+  .review-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #2f4f2f;
+    border-radius: 8px;
+    font-size: 16px;
+    resize: none;
+    transition: border-color 0.3s;
+  }
+  
+  .review-container input:focus,
+  .review-container textarea:focus {
+    border-color: #2f6f2f;
+    outline: none;
+  }
+  
+  .review-container textarea {
+    height: 120px;
+  }
+  
+  .btn {
+    background-color: #2f4f2f;
+    color: #f5f5dc;
+    padding: 12px 0;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 15px;
+  }
+  
+  .btn:hover {
+    background-color: #265e26;
+    transform: translateY(-2px);
+  }
+  
+  .sentiment-display {
+    color: #2f4f2f;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
