@@ -29,7 +29,7 @@ function LoginPage() {
       />
       <button className="btn">Login</button>
       <p>
-        Don't have an account? <a href="/signup">Sign up</a>
+        Don't have an account? <Link to="/signup">Sign up</Link>
       </p>
     </div>
   );
