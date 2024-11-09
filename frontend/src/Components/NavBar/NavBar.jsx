@@ -1,54 +1,16 @@
-import React from "react";
-import "./NavBar.css";
-import { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
+// src/Components/NavBar/NavBar.jsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './NavBar.css';
 
-const NavBar = () => {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const handleButtonToggle = () => {
-    setShowMenu(!showMenu);
-  };
-
+function NavBar() {
   return (
-    <header>
-      <div className="container">
-        <div className="grid navbar-grid">
-          <div className="logo">
-            <h1>ProductShala</h1>
-          </div>
-
-          <nav className={showMenu ? "menu-mobile" : "menu-web"}>
-            <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Services</a>
-              </li>
-              <li>
-                <a
-                  target="_blank"
-                  href="https://www.instagram.com/thapatechnical/"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <div className="ham-menu">
-            <button onClick={handleButtonToggle}>
-              <GiHamburgerMenu />
-            </button>
-          </div>
-        </div>
-      </div>
-    </header>
+    <nav className="navbar">
+      <Link to="/" className="nav-link">Home</Link>
+      <Link to="/login" className="nav-link">Login/Signup</Link>
+      <Link to="/about" className="nav-link">About</Link>
+    </nav>
   );
-};
+}
 
 export default NavBar;

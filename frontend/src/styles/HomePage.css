@@ -1,0 +1,12 @@
+/* src/pages/HomePage.css */
+.home-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  
