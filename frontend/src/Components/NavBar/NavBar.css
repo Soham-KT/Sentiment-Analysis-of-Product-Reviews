@@ -1,17 +1,94 @@
 /* src/Components/NavBar/NavBar.css */
-.navbar {
+.nav-wrapper {
+  background: rgba(0, 100, 0, 0.1); /* light transparent green */
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(10px);
+}
+
+.nav-content {
+  max-width: 1300px;
   display: flex;
-  justify-content: space-around;
-  background-color: #2f4f2f;
-  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+.nav-head{
+  display: flex;
+
 }
 
-.nav-link {
-  color: white;
+.logo {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 3rem;
+  height: auto;
+} 
+.nav-head h3 {
+
+}
+.nav-content ul {
+  justify-content: space-between;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.nav-content li {
+  margin: 0 1.5rem;
+}
+
+.menu-item {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e6e6cc; /* cream color */
+  position: relative;
+  cursor: pointer;
 }
 
-.nav-link:hover {
-  color: #f8f8f2;
+.menu-item::before {
+  content: "";
+  width: 2rem;
+  height: 0.2rem;
+  background: linear-gradient(90deg, #66cc66 0%, #2e8b57 100%); /* gradient green */
+  border-radius: 0.5rem;
+  position: absolute;
+  bottom: -0.6rem;
+  opacity: 0;
+  transform: translateX(-1.5rem);
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover::before {
+  width: 100%;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.contact-btn {
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e6e6cc; /* cream color */
+  background: linear-gradient(90deg, #66cc66 0%, #2e8b57 100%); /* gradient green */
+  padding: 0.6rem 2rem;
+  border: none;
+  outline: 1.5px solid transparent;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transition: all 0.3 ease;
+}
+
+.contact-btn:hover {
+  color: #66cc66; /* light green */
+  background: #1a3d1a; /* dark green */
+  outline: 1.5px solid #66cc66; /* light green */
 }
