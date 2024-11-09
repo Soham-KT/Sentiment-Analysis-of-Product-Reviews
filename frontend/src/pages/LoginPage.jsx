@@ -1,7 +1,7 @@
 // src/pages/LoginPage.js
 import React, { useState } from "react";
 import "../styles/LoginSignup.css";
-
+import { Link } from "react-router-dom";
 function LoginPage() {
   const [form, setForm] = useState({ username: "", password: "" });
 
@@ -29,7 +29,7 @@ function LoginPage() {
       />
       <button className="btn">Login</button>
       <p>
-        Don't have an account? <a href="/signup">Sign up</a>
+        Don't have an account? <Link to="/signup">Sign up</Link>
       </p>
     </div>
   );
