@@ -22,6 +22,7 @@ Folder Structure :
     - csv-modification.ipynb -> contains code to modify the csv file
     - model-maker.ipynb -> contains code to make the model
     - testing.py -> contains code to test snippets of code using dummy data
+    - metrics.ipynb -> to calculate the metrics : accuracy, precision, recall, f1 score and confusion matrix
   - Flask
     - templates
       - index.html -> basic template to check flask functionality
