@@ -15,12 +15,12 @@ function HomePage() {
                 Are you confused about a product and tired of searching for genuine review ? Look no further! At ProductShala,
                 you can enter a review of product and see if its worthy to spend your money on. No need of reading vague reviews and spend your precious time and money .
               </p>
-              <div className="btn btn-group">
+              <div className="home-buttons">
                 <a href="/login">
-                  <button className="btn">Register now</button>
+                  <button className="register-btn">Register now</button>
                 </a>
                 <a href="/About">
-                  <button className="btn secondary-btn">learn more</button>
+                  <button className="learnmore-btn">learn more</button>
                 </a>
               </div>
             </div>
