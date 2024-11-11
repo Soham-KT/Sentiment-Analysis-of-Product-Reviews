@@ -16,7 +16,7 @@ function SignupPage() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
+    console.log(form);
   };
   return (
     // <div className="container">
