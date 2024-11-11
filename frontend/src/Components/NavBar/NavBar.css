@@ -2,7 +2,7 @@
 
 .nav-wrapper {
   background: rgba(20, 53, 20, 0.9); /* more pronounced green */
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 30;
@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   margin: 0 auto;
 }
 
@@ -40,14 +40,14 @@
 .nav-content ul {
   display: flex;
   align-items: center;
-  gap: 1rem; /* increased gap for spacing */
+  gap: 1.5rem; /* increased gap for spacing */
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .nav-content li {
-  margin: 0 1rem;
+  margin: 0;
 }
 
 .nav-link {
