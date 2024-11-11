@@ -1,6 +1,6 @@
 // src/pages/LoginPage.js
 import React, { useState } from "react";
-import "../styles/LoginSignup.css";
+import "../styles/Login.css";
 import { Link } from "react-router-dom";
 function LoginPage() {
   const [form, setForm] = useState({ username: "", password: "" });
