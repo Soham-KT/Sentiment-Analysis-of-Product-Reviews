@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import "../styles/SignUp.css";
 import register from "../assets/register.png";
+import { Link } from "react-router-dom";
+
 function SignupPage() {
   const [form, setForm] = useState({
     username: "",
@@ -118,7 +120,7 @@ function SignupPage() {
                     Sign Up
                   </button>
                   <p className="login-link">
-                    Already have an account? <a href="/login">Log in</a>
+                    Already have an account? <Link to="/login">Login</Link>
                   </p>
                 </form>
               </div>

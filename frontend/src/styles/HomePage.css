@@ -20,46 +20,44 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .grid-two-cols {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
 }
 
 .Home-content {
-  flex: 1;
-  animation: fadeInUp 1s ease-in-out;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards 0.2s;
 }
 
 .Home-content p {
   font-size: 1.1rem;
   color: #666;
   margin-bottom: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   animation: slideInLeft 1.2s ease forwards;
 }
 
 .Home-content h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: #333;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   animation: zoomIn 1.5s ease forwards;
 }
 
-.Home-content .btn-group {
+.home-buttons {
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
   animation: fadeIn 1.8s ease forwards;
 }
 
-.btn {
+.register-btn, .learnmore-btn {
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
@@ -69,25 +67,29 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn:hover {
-  background-color: #55aa55;
-  transform: translateY(-2px);
-}
-
-.secondary-btn {
-  background-color: transparent;
-  color: #66cc66;
-  border: 1px solid #66cc66;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.secondary-btn:hover {
-  background-color: #66cc66;
+.register-btn {
+  background-color: rgba(14, 86, 14, 0.765);
   color: #ffffff;
 }
 
+.learnmore-btn {
+  background-color: transparent;
+  color: #0e2819;
+  border: 2px solid rgba(34, 101, 34, 0.9);
+}
+
+.register-btn:hover {
+  background-color: rgba(41, 96, 41, 0.9);
+  transform: translateY(-3px);
+}
+
+.learnmore-btn:hover {
+  background-color:rgba(20, 53, 20, 0.9);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
 .Home-image {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,12 +162,17 @@
 
 @media (max-width: 768px) {
   .grid-two-cols {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
   .Home-content h1 {
-    font-size: 2rem;
+    font-size: 2.4rem;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
   .Home-image img {
