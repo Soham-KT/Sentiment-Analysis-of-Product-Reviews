@@ -64,3 +64,158 @@ a {
 a:hover {
   color: #265e26;
 } */
+
+/* Login.css */
+
+.section-login {
+  padding: 2rem 0;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.grid-two-cols {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.login-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1;
+
+}
+
+.main-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.login-form label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
+  
+}
+
+.login-form input:focus {
+  border-color: #66cc66;
+  box-shadow: 0 0 5px rgba(102, 204, 102, 0.3);
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: #66cc66;
+  color: #ffffff;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #55aa55;
+  transform: translateY(-1px);
+}
+
+.signup-link {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+}
+
+.signup-link a {
+  color: #66cc66;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+  color: #55aa55;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .login-image {
+    margin-bottom: 1.5rem;
+  }
+
+  .login-form {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 1.4rem;
+  }
+
+  .login-form {
+    padding: 1.5rem;
+  }
+
+  .login-image img {
+    max-width: 80%;
+  }
+}
