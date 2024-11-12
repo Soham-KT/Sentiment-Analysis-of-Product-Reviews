@@ -1,0 +1,102 @@
+/* General styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    background-color: #f3f4ed; /* Light cream background */
+    color: #1e3932; /* Dark green text */
+    min-height: 100vh;
+  }
+  
+  .contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .contact-left h1 {
+    font-size: 3rem; /* Enlarged heading */
+    color: #2a9d8f; /* Green color for heading */
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .contact-illustration {
+    width: 350px; /* Enlarged illustration */
+    margin-top: 1rem;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Increased gap for larger look */
+    width: 100%;
+    max-width: 450px;
+    padding: 3rem;
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 10px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15); /* Soft shadow for elegance */
+    border: 2px solid #2a9d8f; /* Green border for accent */
+  }
+  
+  .contact-form label {
+    color: #1e3932; /* Dark green color for labels */
+    font-size: 1.2rem; /* Slightly larger label text */
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 1rem; /* Increased padding */
+    border: 1px solid #b7d3d2; /* Soft green border */
+    border-radius: 6px;
+    background-color: #f8f9fa; /* Light cream background for fields */
+    color: #1e3932; /* Dark green text */
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: #2a9d8f; /* Green border on focus */
+    box-shadow: 0 0 5px rgba(42, 157, 143, 0.3); /* Soft green glow on focus */
+  }
+  
+  .submit-btn {
+    background-color: #2a9d8f; /* Green button */
+    color: #ffffff;
+    padding: 1rem; /* Larger button */
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #1e6f65; /* Darker green on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .contact-page {
+      flex-direction: column;
+      padding: 2rem;
+    }
+  
+    .contact-illustration {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+  
