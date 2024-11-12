@@ -1,72 +1,168 @@
-/* src/styles/ReviewPage.css */
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-.review-container {
-    background-color: #f5f5dc;
-    padding: 30px;
-    width: 400px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 128, 0, 0.3);
-    transition: transform 0.2s ease-in-out;
+/* Main Page Styling */
+.review-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f4ed;
+}
+
+.review-button {
+  background-color: #2a9d8f;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  animation: fadeIn 1s ease;
+}
+
+.review-button:hover {
+  background-color: #1e6f65;
+  transform: scale(1.05);
+}
+
+/* Dialog Overlay */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInOverlay 0.5s ease;
+}
+
+/* Dialog Box */
+.dialog-box {
+  width: 90%;
+  max-width: 500px;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: slideInUp 0.7s ease;
+  position: relative;
+}
+
+.dialog-heading {
+  font-size: 1.8rem;
+  color: #2a9d8f;
+  margin-bottom: 1.5rem;
+}
+
+.review-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #f3f4ed;
+  color: #333;
+  resize: none;
+  height: 100px;
+  margin-bottom: 1.5rem;
+}
+
+.review-input:focus {
+  outline: none;
+  border-color: #2a9d8f;
+  box-shadow: 0 0 5px rgba(42, 157, 143, 0.3);
+}
+
+.submit-button, .close-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.submit-button {
+  background-color: #2a9d8f;
+  color: #ffffff;
+}
+
+.submit-button:hover {
+  background-color: #1e6f65;
+  transform: scale(1.05);
+}
+
+.close-button {
+  background-color: #cccccc;
+  color: #333333;
+}
+
+.close-button:hover {
+  background-color: #999999;
+  transform: scale(1.05);
+}
+
+/* Result Box */
+.result-box {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  animation: fadeInResult 1s ease;
+}
+
+.result-box.positive {
+  color: #1e3932;
+  background-color: #d4edda;
+}
+
+.result-box.negative {
+  color: #721c24;
+  background-color: #f8d7da;
+}
+
+.result-box.neutral {
+  color: #856404;
+  background-color: #fff3cd;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInResult {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .dialog-box {
+    width: 90%;
+    padding: 1.5rem;
   }
-  
-  .review-container:hover {
-    transform: scale(1.02);
-  }
-  
-  .review-container h2 {
-    color: #2f4f2f;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .review-container input,
-  .review-container textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #2f4f2f;
-    border-radius: 8px;
-    font-size: 16px;
-    resize: none;
-    transition: border-color 0.3s;
-  }
-  
-  .review-container input:focus,
-  .review-container textarea:focus {
-    border-color: #2f6f2f;
-    outline: none;
-  }
-  
-  .review-container textarea {
-    height: 120px;
-  }
-  
-  .btn {
-    background-color: #2f4f2f;
-    color: #f5f5dc;
-    padding: 12px 0;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
-    margin-top: 15px;
-  }
-  
-  .btn:hover {
-    background-color: #265e26;
-    transform: translateY(-2px);
-  }
-  
-  .sentiment-display {
-    color: #2f4f2f;
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 20px;
-    text-align: center;
-  }
-  
+}

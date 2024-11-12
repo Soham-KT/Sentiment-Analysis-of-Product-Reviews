@@ -19,7 +19,7 @@ function HomePage() {
                 you can enter a review of product and see if its worthy to spend your money on. No need of reading vague reviews and spend your precious time and money .
               </p>
               <div className="home-buttons">
-                <Link to="/login"><button className="register-btn">Register now</button></Link>
+                <Link to="/review"><button className="register-btn">review now</button></Link>
                 <Link to="/about"><button className="learnmore-btn">learn more</button></Link> 
               </div>
             </div>
