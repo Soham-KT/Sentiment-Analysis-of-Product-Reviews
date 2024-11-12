@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import "../styles/ContactPage.css"; // Link to the CSS file
-import contact from "../assets/support.png";
+import contact from "../assets/support.png"; // Replace with the created image path
 
 function ContactPage() {
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',
     email: '',
     message: ''
   });
@@ -20,7 +20,7 @@ function ContactPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data:", formData);
-    // You can add functionality to send formData to a backend server here
+    // Code to send formData to backend here
   };
 
   return (
@@ -30,11 +30,11 @@ function ContactPage() {
         <img src={contact} alt="Contact Illustration" className="contact-illustration" />
       </div>
       <form className="contact-form" onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="name">Name</label>
         <input
           type="text"
-          name="username"
-          value={formData.username}
+          name="name"
+          value={formData.name}
           onChange={handleChange}
           required
         />
