@@ -1,110 +1,123 @@
-/* Layout and Background */
+/* General Layout */
 .contact-page {
-    display: flex;
-    background-color: #f0f5f4; /* Soft cream background */
-    padding: 20px;
-    height: 100vh;
-    font-family: 'Arial', sans-serif;
-    animation: fadeIn 1s ease-in;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f5f4; /* Soft cream background */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Container for Left Image and Form */
+.contact-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  background-color: #e4f1e8;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Left Section Styling */
+.contact-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #e4f1e8;
+  color: #2f4f4f;
+}
+
+.contact-left h1 {
+  font-size: 2rem;
+  color: #3a5a40;
+  margin-bottom: 20px;
+}
+
+.contact-illustration {
+  max-width: 80%;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Form Section Styling */
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  background-color: #f0f5f4;
+}
+
+.contact-form label {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #3a5a40;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #b2d3c2;
+  border-radius: 5px;
+  background-color: #e9f0ea;
+  color: #3a5a40;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3a5a40;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2e4f4f;
+}
+
+/* Map Section Styling */
+.maps-sec {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.maps-sec iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+/* Floating Animation for Image */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
   }
-  
-  /* Left Side Styling */
-  .contact-left {
-    flex: 1;
-    display: flex;
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .contact-container {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #e4f1e8; /* Light mint background */
-    color: #2f4f4f; /* Charcoal text */
-    padding: 20px;
-    border-radius: 15px 0 0 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    animation: slideInLeft 0.8s ease-out;
   }
-  
-  .contact-left h1 {
-    font-size: 2rem;
-    color: #3a5a40;
-    margin-bottom: 10px;
+
+  .maps-sec iframe {
+    height: 250px;
   }
-  
-  .contact-left p {
-    font-size: 1rem;
-    color: #536d56;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .contact-illustration {
-    max-width: 80%;
-    margin-bottom: 20px;
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .contact-info p {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #3a5a40;
-  }
-  
-  /* Form Section */
-  .contact-form {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px;
-    background-color: #f0f5f4;
-    border-radius: 0 15px 15px 0;
-  }
-  
-  .contact-form label {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #3a5a40;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #b2d3c2;
-    border-radius: 5px;
-    background-color: #e9f0ea; /* Light mint background for inputs */
-    color: #3a5a40;
-  }
-  
-  .submit-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #3a5a40; /* Dark green */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-btn:hover {
-    background-color: #2e4f4f; /* Darker shade on hover */
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @keyframes slideInLeft {
-    from { transform: translateX(-100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-  }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-  
+}
