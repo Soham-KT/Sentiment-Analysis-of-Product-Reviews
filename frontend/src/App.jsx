@@ -7,6 +7,7 @@ import ReviewPage from './pages/Reviewpage';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from "./pages/ContactPage";
+import DashBoard from "./pages/DashBoard";
 import './styles/App.css';
 import NavBar from './Components/NavBar/NavBar';
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/review" element={<ReviewPage />} />
+          <Route path="/dashboard" element={<DashBoard />} />
         </Routes>
       </div>
     </Router>
