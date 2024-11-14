@@ -16,10 +16,29 @@ function SignupPage() {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
+    try {
+      const response = await fetch("http://localhost:5000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        console.log("Registration successful:", data);
+        // Clear the form or redirect as needed
+        setForm({ username: "", email: "", password: "", confirmPassword: "" });
+      } else {
+        console.error("Registration error:", data.message);
+      }
+    } catch (error) {
+      console.error("Signup error:", error);
+    }
   };
+  
   return (
     // <div className="container">
     //   <h2>Sign Up</h2>
@@ -73,7 +92,7 @@ function SignupPage() {
               {/* our main registration code  */}
               <div className="signup-form">
                 <h1 className="main-heading">SignUp form</h1>
-                
+
                 <form onSubmit={handleSubmit}>
                   <div>
                     <label htmlFor="username">Username</label>
@@ -115,7 +134,7 @@ function SignupPage() {
                       placeholder="Confirm Password"
                     />
                   </div>
-                  
+
                   <button type="submit" className="btn btn-submit">
                     Sign Up
                   </button>
