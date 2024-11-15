@@ -1,11 +1,12 @@
-// src/pages/ReviewPage.js
 import React, { useState } from "react";
+import axios from "axios";
 import "../styles/ReviewPage.css";
 
 function ReviewPage() {
   const [openDialog, setOpenDialog] = useState(false);
   const [review, setReview] = useState("");
-  const [result, setResult] = useState("");
+  const [sentiment, setSentiment] = useState("");
+  const [polarity, setPolarity] = useState("");
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
@@ -14,22 +15,31 @@ function ReviewPage() {
   const handleCloseDialog = () => {
     setOpenDialog(false);
     setReview("");
-    setResult("");
+    setSentiment("");
+    setPolarity("");
   };
 
-  const handleSubmitReview = () => {
-    const sentiment = analyzeSentiment(review);
-    setResult(sentiment);
-  };
+  const handleSubmitReview = async (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
 
-  // Dummy sentiment analysis function
-  const analyzeSentiment = (text) => {
-    if (text.toLowerCase().includes("good") || text.toLowerCase().includes("great")) {
-      return "Positive";
-    } else if (text.toLowerCase().includes("bad") || text.toLowerCase().includes("poor")) {
-      return "Negative";
-    } else {
-      return "Neutral";
+    // Prepare form data
+    const formData = new FormData();
+    formData.append("review", review);
+
+    try {
+      const response = await axios.post("http://127.0.0.1:5000/predict", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      // Extract data from response
+      const { prediction, polarity } = response.data;
+
+      setSentiment(prediction); // Set sentiment
+      setPolarity(polarity); // Set polarity (rounded to 2 decimal places)
+    } catch (error) {
+      console.error("Error analyzing sentiment:", error);
+      setSentiment("Error");
+      setPolarity("N/A");
     }
   };
 
@@ -43,21 +53,25 @@ function ReviewPage() {
         <div className="dialog-overlay">
           <div className="dialog-box">
             <h2 className="dialog-heading">Submit Your Review</h2>
-            <textarea
-              className="review-input"
-              placeholder="Write your review here..."
-              value={review}
-              onChange={(e) => setReview(e.target.value)}
-            ></textarea>
-            <button className="submit-button" onClick={handleSubmitReview}>
-              Submit Review
-            </button>
+            <form onSubmit={handleSubmitReview}>
+              <textarea
+                className="review-input"
+                placeholder="Write your review here..."
+                value={review}
+                onChange={(e) => setReview(e.target.value)}
+                required
+              ></textarea>
+              <button type="submit" className="submit-button">
+                Submit Review
+              </button>
+            </form>
             <button className="close-button" onClick={handleCloseDialog}>
               Close
             </button>
-            {result && (
-              <div className={`result-box ${result.toLowerCase()}`}>
-                {`Your review is ${result}`}
+            {sentiment && (
+              <div className="result-box">
+                <p>{`Sentiment: ${sentiment}`}</p>
+                <p>{`Polarity: ${polarity}`}</p>
               </div>
             )}
           </div>
@@ -68,4 +82,3 @@ function ReviewPage() {
 }
 
 export default ReviewPage;
-
