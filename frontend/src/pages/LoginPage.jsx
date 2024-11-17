@@ -16,27 +16,7 @@ function LoginPage() {
     console.log(form);
   };
   return (
-    // <div className="container">
-    //   <h2>Login</h2>
-    //   <input
-    //     type="text"
-    //     name="username"
-    //     placeholder="Username or Email"
-    //     value={form.username}
-    //     onChange={handleChange}
-    //   />
-    //   <input
-    //     type="password"
-    //     name="password"
-    //     placeholder="Password"
-    //     value={form.password}
-    //     onChange={handleChange}
-    //   />
-    //   <button className="btn">Login</button>
-    //   <p>
-    //     Don't have an account? <Link to="/signup">Sign up</Link>
-    //   </p>
-    // </div>
+
     <>
     <section>
       <main>
