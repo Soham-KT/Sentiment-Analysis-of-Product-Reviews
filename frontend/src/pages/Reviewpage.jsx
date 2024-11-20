@@ -71,7 +71,7 @@ function ReviewPage() {
             {sentiment && (
               <div className="result-box">
                 <p>{`Sentiment: ${sentiment}`}</p>
-                <p>{`Polarity: ${polarity}`}</p>
+                {/* <p>{`Polarity: ${polarity}`}</p> */}
               </div>
             )}
           </div>
