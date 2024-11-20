@@ -1,4 +1,4 @@
-import "../styles/AboutPage.css";
+import "../styles/Aboutpage.css";
 import Developer1 from "../assets/Developer1.png"; // Replace with actual image paths
 import Developer2 from "../assets/Developer2.png"; // Replace with actual image paths
 
