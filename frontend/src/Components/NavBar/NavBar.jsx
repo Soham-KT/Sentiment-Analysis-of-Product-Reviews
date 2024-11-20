@@ -23,9 +23,9 @@ function NavBar() {
             <li>
               <NavLink to="/contact" className="nav-link"> Contact </NavLink>
             </li>
-            {/* <li>
+            <li>
               <NavLink to="/login" className="nav-link"> Register </NavLink>
-            </li> */}
+            </li>
           </ul>
         </nav>
       </div>
