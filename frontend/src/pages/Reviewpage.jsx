@@ -27,7 +27,7 @@ function ReviewPage() {
     formData.append("review", review);
 
     try {
-      const response = await axios.post("http://127.0.0.1:5000/predict", formData, {
+      const response = await axios.post("http://172.20.10.3:5000/predict", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
