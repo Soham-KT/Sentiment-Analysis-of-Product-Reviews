@@ -43,12 +43,21 @@
 }
 
 .Home-content h1 {
-  font-size: 2.8rem;
+  font-size: 3rem; /* Larger than h2 for emphasis */
   font-weight: 700;
-  color: #333;
-  margin-bottom: 1.2rem;
-  animation: zoomIn 1.5s ease forwards;
+  color: #0e2819;
+  margin-bottom: 0.8rem;
+  animation: fadeInUp 1.2s ease forwards; /* Matches other animations */
 }
+
+.Home-content h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1.4s ease forwards; /* Slightly delayed for sequential effect */
+}
+
 
 .home-buttons {
   display: flex;
@@ -165,9 +174,13 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
-
+  
   .Home-content h1 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
+  }
+
+  .Home-content h2 {
+    font-size: 1.5rem;
   }
 
   .home-buttons {

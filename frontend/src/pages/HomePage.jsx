@@ -12,26 +12,30 @@ function HomePage() {
         <section className="section-Home">
           <div className="container grid grid-two-cols">
             <div className="Home-content">
-              <p>Hello ! Hope you are having a good day.</p>
-              <h1>Welcome to ProductShala</h1>
+              {/* New Headings */}
+              <h1>ProductShala</h1>
+              <h2>Automation of Review Analysis</h2>
+
+              <p>Hello! Hope you are having a good day.</p>
               <p>
-                Are you confused about a product and tired of searching for genuine review ? Look no further! At ProductShala,
-                you can enter a review of product and see if its worthy to spend your money on. No need of reading vague reviews and spend your precious time and money .
+                Are you confused about a product and tired of searching for genuine reviews? 
+                Look no further! At ProductShala, you can enter a review of a product and see 
+                if it's worth spending your money on. No need to read vague reviews and waste 
+                your precious time and money.
               </p>
               <div className="home-buttons">
-                <Link to="/review"><button className="register-btn">review now</button></Link>
-                <Link to="/about"><button className="learnmore-btn">learn more</button></Link> 
+                <Link to="/review">
+                  <button className="register-btn">Review Now</button>
+                </Link>
+                <Link to="/about">
+                  <button className="learnmore-btn">Learn More</button>
+                </Link>
               </div>
             </div>
 
-            {/* hero images  */}
+            {/* Hero images */}
             <div className="Home-image">
-              <img
-                src={Home}
-                alt="coding together"
-                width="600"
-                height="400"
-              />
+              <img src={Home} alt="coding together" width="600" height="400" />
             </div>
           </div>
         </section>
