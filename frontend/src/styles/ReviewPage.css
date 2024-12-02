@@ -1,34 +1,129 @@
-/* Basic Reset */
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Main Page Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #eef5f1;
+  color: #333;
+}
+
+/* Review Page Styling */
 .review-page {
+  padding: 2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  background-color: #f3f4ed;
 }
 
-.review-button {
-  background-color: #2a9d8f;
-  color: #ffffff;
-  padding: 1rem 2rem;
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  color: #1d7874;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
   font-size: 1.2rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  animation: fadeIn 1s ease;
+  color: #555;
+  margin-bottom: 2rem;
 }
 
-.review-button:hover {
-  background-color: #1e6f65;
+.hero-button {
+  background-color: #1d7874;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #145b57;
   transform: scale(1.05);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.testimonials-section h2 {
+  font-size: 2rem;
+  color: #1d7874;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.testimonial-card p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.testimonial-card h4 {
+  font-size: 1.1rem;
+  color: #1d7874;
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #eef5f1;
+  width: 100%;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Floating Review Button */
+.floating-review-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #1d7874;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-review-button:hover {
+  background-color: #145b57;
+  transform: scale(1.1);
 }
 
 /* Dialog Overlay */
@@ -38,131 +133,156 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Dim the background */
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeInOverlay 0.5s ease;
+  z-index: 1000; /* Ensure it appears on top of other elements */
 }
 
 /* Dialog Box */
 .dialog-box {
+  background-color: #fff; /* White background */
   width: 90%;
-  max-width: 500px;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  animation: slideInUp 0.7s ease;
-  position: relative;
+  max-width: 400px;
+  padding: 2rem; /* Padding around the content */
+  border-radius: 12px; /* Smooth rounded edges */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  text-align: center; /* Center-align content */
 }
 
+/* Dialog Heading */
 .dialog-heading {
-  font-size: 1.8rem;
-  color: #2a9d8f;
-  margin-bottom: 1.5rem;
+  font-size: 1.8rem; /* Larger heading font */
+  font-weight: bold; /* Make the heading stand out */
+  color: #1d7874; /* Greenish theme color */
+  margin-bottom: 1rem; /* Spacing below the heading */
 }
 
+/* Textarea for Review Input */
 .review-input {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  background-color: #f3f4ed;
-  color: #333;
-  resize: none;
-  height: 100px;
-  margin-bottom: 1.5rem;
+  width: 100%; /* Full width inside the dialog box */
+  height: 120px; /* Make the textarea taller */
+  padding: 0.8rem; /* Internal padding */
+  font-size: 1rem; /* Readable font size */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 1.5rem; /* Space below textarea */
+  background-color: #f9f9f9; /* Light background for readability */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+  resize: none; /* Prevent resizing */
 }
 
-.review-input:focus {
-  outline: none;
-  border-color: #2a9d8f;
-  box-shadow: 0 0 5px rgba(42, 157, 143, 0.3);
-}
-
-.submit-button, .close-button {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin: 0.5rem;
-  transition: transform 0.2s ease;
-}
-
+/* Submit Button */
 .submit-button {
-  background-color: #2a9d8f;
-  color: #ffffff;
+  background-color: #1d7874; /* Greenish button color */
+  color: #fff; /* White text */
+  font-size: 1rem; /* Standard font size */
+  padding: 0.8rem 2rem; /* Padding for button size */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Slightly rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Elevated shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .submit-button:hover {
-  background-color: #1e6f65;
-  transform: scale(1.05);
+  background-color: #145b57; /* Darker green on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 
+/* Close Button */
 .close-button {
-  background-color: #cccccc;
-  color: #333333;
+  background-color: #e0e0e0; /* Light gray background */
+  color: #333; /* Darker text color */
+  font-size: 0.9rem; /* Slightly smaller font size */
+  padding: 0.6rem 1.5rem; /* Smaller padding for a smaller button */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Button shadow */
+  margin-top: 1rem; /* Space between Submit and Close buttons */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .close-button:hover {
-  background-color: #999999;
-  transform: scale(1.05);
+  background-color: #d6d6d6; /* Darker gray on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 
-/* Result Box */
+/* Button Group */
+.button-group {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center; /* Center the buttons horizontally */
+  gap: 0; /* Remove any unnecessary gap since margin is used */
+}
+
+/* Sentiment Result Box */
 .result-box {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 8px;
-  animation: fadeInResult 1s ease;
+  margin-top: 1rem; /* Space above the result */
+  padding: 1rem; /* Internal spacing */
+  border-radius: 8px; /* Rounded edges */
+  background-color: #f0f0f0; /* Light gray background */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Sentiment Result Positive */
 .result-box.positive {
-  color: #1e3932;
-  background-color: #d4edda;
+  color: #1d7874; /* Green for positive */
+  font-weight: bold;
 }
 
+/* Sentiment Result Negative */
 .result-box.negative {
-  color: #721c24;
-  background-color: #f8d7da;
+  color: #d9534f; /* Red for negative */
+  font-weight: bold;
 }
 
+/* Sentiment Result Neutral */
 .result-box.neutral {
-  color: #856404;
-  background-color: #fff3cd;
+  color: #ffc107; /* Yellow for neutral */
+  font-weight: bold;
 }
 
-/* Keyframes */
+/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeInOverlay {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInResult {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .dialog-box {
-    width: 90%;
-    padding: 1.5rem;
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} */
