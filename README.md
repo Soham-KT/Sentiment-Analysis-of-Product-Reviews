@@ -1,14 +1,7 @@
 ### Sentiment-Analysis-of-Product-Reviews
 
 front end:
-  - login page
-    - username / email
-    - password
-  - signup page
-    - username (unique)
-    - email
-    - password
-    - password conf
+  - landing page
   - review page
     - heading of review
     - review of the product
